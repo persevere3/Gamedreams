@@ -2,7 +2,10 @@ function events() {
   // lang
   let enUS = document.querySelector(".langIcon .enUS")
   let zhTW = document.querySelector(".langIcon .zhTW")
-  let target = location.href.indexOf("enUS") > -1 ? enUS : zhTW
+  let target =
+    location.pathname.indexOf("enUS") > -1 || location.pathname === "/"
+      ? enUS
+      : zhTW
   target.classList.add("active")
 
   // menu2
