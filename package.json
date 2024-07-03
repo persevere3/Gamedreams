@@ -1,0 +1,16 @@
+{
+  "type": "module",
+  "dependencies": {
+    "browser-sync": "^3.0.2",
+    "del": "^7.1.0",
+    "gulp": "^5.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-file-include": "^2.3.0",
+    "gulp-html-i18n": "^0.16.0",
+    "gulp-uglify": "^3.0.2",
+    "imagemin": "^9.0.0",
+    "imagemin-webp": "^8.0.0",
+    "merge-stream": "^2.0.0",
+    "swiper": "^11.1.4"
+  }
+}
