@@ -446,7 +446,11 @@ section {
   }
 }
 
-video::-webkit-media-controls {
+video::-webkit-media-controls-fullscreen-button {
+  display: none !important;
+}
+
+video::-webkit-media-controls-enclosure {
   display: none !important;
 }
 
