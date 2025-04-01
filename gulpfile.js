@@ -25,6 +25,8 @@ import imageminWebp from "imagemin-webp"
 //
 import merge from "merge-stream"
 
+import copy from "gulp-copy"
+
 // gulp watch
 import browser from "browser-sync"
 
@@ -104,6 +106,10 @@ function svg() {
   return merge(gulp.src("./svg/**/*")).pipe(gulp.dest(["./dist/svg"]))
 }
 
+function copyVideos() {
+  return gulp.src("./video/*.{mp4,avi,mov,webm}").pipe(copy("./dist"))
+}
+
 // BrowserSync
 function server(done) {
   browserSync.init({
@@ -131,7 +137,10 @@ function watchFiles() {
 
 // Define complex tasks
 const vendor = gulp.series(clean) //, modules
-const build = gulp.series(vendor, gulp.parallel(html, css, js, img, svg))
+const build = gulp.series(
+  vendor,
+  gulp.parallel(html, css, js, img, svg, copyVideos)
+)
 const watch = gulp.series(build, server, watchFiles)
 
 // Export tasks
